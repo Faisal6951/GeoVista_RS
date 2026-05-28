@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Plus_Jakarta_Sans, IBM_Plex_Mono } from 'next/font/google';
+// @ts-ignore: Allow side-effect import of global CSS without type declarations
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { SITE } from '@/lib/content';
