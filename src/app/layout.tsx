@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Plus_Jakarta_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
 import { SITE } from '@/lib/content';
 
 const sans = Plus_Jakarta_Sans({
@@ -31,11 +32,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html
+      lang='en'
+      className={`${sans.variable} ${mono.variable}`}
+      suppressHydrationWarning
+    >
       <body suppressHydrationWarning>
-        <Script id="geovista-theme" strategy="beforeInteractive">
+        <Script id='geovista-theme' strategy='beforeInteractive'>
           {themeInit}
         </Script>
         {children}
