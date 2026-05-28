@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import 'maplibre-gl/dist/maplibre-gl.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scoped to tool route — avoids overriding portal theme on :root */
+.gis-tool-root {
+  --gis-panel-bg: #161b22;
+  --gis-panel-border: #484f58;
+  --gis-panel-text: #f0f6fc;
+  --gis-panel-muted: #8b949e;
+  --gis-panel-accent: #58a6ff;
+
+  height: 100%;
+  min-height: 100dvh;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Solid map overlays — readable on any basemap (light / dark / satellite) */
+.gis-map-control {
+  background: var(--gis-panel-bg) !important;
+  border: 1px solid var(--gis-panel-border) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65) !important;
+  color: var(--gis-panel-text) !important;
+}
+
+.gis-map-control input,
+.gis-map-control input::placeholder {
+  color: var(--gis-panel-text);
+}
+
+.gis-map-control input::placeholder {
+  color: var(--gis-panel-muted);
+  opacity: 1;
+}
+
+.gis-map-chip {
+  background: var(--gis-panel-bg);
+  border: 1px solid var(--gis-panel-border);
+  color: var(--gis-panel-text);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
+}
+
+.gis-map-chip-accent {
+  background: var(--gis-panel-bg);
+  border: 1px solid var(--gis-panel-accent);
+  color: #79c0ff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
+}
+
+.gis-map-chip-warn {
+  background: #1f1630;
+  border: 1px solid #8957e5;
+  color: #e2d4f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
+}
+
+.gis-map-msg {
+  background: var(--gis-panel-bg);
+  border: 1px solid var(--gis-panel-border);
+  color: var(--gis-panel-muted);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
+.gis-map-msg strong,
+.gis-map-msg .gis-map-msg-title {
+  color: var(--gis-panel-text);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #161b22;
+}
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3d444d;
+}
+
+/* MapLibre overrides */
+.maplibregl-canvas {
+  outline: none;
+}
+.maplibregl-ctrl-bottom-right {
+  bottom: 32px;
+  right: 12px;
+}
+.maplibregl-ctrl-group {
+  background: #161b22 !important;
+  border: 1px solid #30363d !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+}
+.maplibregl-ctrl-group button {
+  background: transparent !important;
+  border-color: #30363d !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+.maplibregl-ctrl-group button:hover {
+  background: #22272e !important;
+}
+.maplibregl-ctrl-group button span {
+  filter: invert(1) brightness(0.7);
+}
+.maplibregl-ctrl-attrib {
+  display: none;
+}
+
+/* Custom popup */
+.maplibregl-popup-content {
+  background: #161b22 !important;
+  border: 1px solid #30363d !important;
+  border-radius: 8px !important;
+  color: #e6edf3 !important;
+  font-family: var(--font-body) !important;
+  font-size: 13px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+  padding: 12px 14px !important;
+}
+.maplibregl-popup-tip {
+  border-top-color: #161b22 !important;
+}
+
+/* Measurement tooltip */
+.measure-tooltip {
+  background: rgba(34, 211, 238, 0.15);
+  border: 1px solid rgba(34, 211, 238, 0.5);
+  border-radius: 4px;
+  color: #22d3ee;
+  padding: 4px 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  pointer-events: none;
+}
+
+/* Layer toggle animations */
+.layer-item {
+  transition: all 0.15s ease;
+}
+.layer-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Range slider styling */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 2px;
+  background: #30363d;
+  outline: none;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #22d3ee;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Scan line effect on header */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.cursor-blink {
+  animation: blink 1.2s infinite;
+}
+
+/* Glow effect */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
+}
+.glow-green {
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.15);
+}
+
+/* Analysis panel gradient border */
+.gradient-border {
+  position: relative;
+  border-radius: 8px;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.3),
+    rgba(74, 222, 128, 0.1),
+    rgba(34, 211, 238, 0.3)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Fade in animation for panels */
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.panel-animate {
+  animation: panelIn 0.3s ease-out;
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ── Responsive layout (GIS Explorer) ───────────────── */
+.gis-sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  top: 3rem;
+  bottom: 1.75rem;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  cursor: pointer;
+}
+
+.gis-sidebar-drawer {
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  bottom: 1.75rem;
+  width: min(18rem, 88vw);
+  z-index: 50;
+  transform: translateX(-100%);
+  box-shadow: 8px 0 32px rgba(0, 0, 0, 0.45);
+}
+
+.gis-sidebar-drawer.gis-sidebar-open {
+  transform: translateX(0);
+}
+
+/* @media (max-width: 1023px) {
+  .gis-header {
+    padding: 0.5rem 1rem !important;
+  }
+
+  .gis-header-stats {
+    display: none !important;
+  }
+} */
+@media (max-width: 867px) {
+  .gis-search-bar {
+    top: 0.75rem !important;
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    width: auto !important;
+    max-width: none !important;
+    transform: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .gis-search-bar input {
+    font-size: 16px !important;
+  }
+
+  .gis-toolbar {
+    top: auto !important;
+    left: auto !important;
+    bottom: 0.75rem !important;
+    right: 0.75rem !important;
+    max-width: none !important;
+  }
+
+  .gis-header-stats {
+    display: none !important;
+  }
+
+  .gis-status-right span:last-child {
+    display: none;
+  }
+
+  .maplibregl-ctrl-bottom-right {
+    bottom: 5.5rem !important;
+    right: 0.5rem !important;
+  }
+
+  .maplibregl-ctrl-group button {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gis-status-center {
+    display: none !important;
+  }
+}

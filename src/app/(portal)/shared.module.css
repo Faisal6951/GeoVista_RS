@@ -1,0 +1,447 @@
+.alt {
+  background: var(--bg-subtle);
+  border-block: 1px solid var(--border);
+}
+
+.inlineCode {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+}
+
+.proseGrid {
+  display: grid;
+  gap: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .proseGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.proseCard {
+  padding: 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.proseCard h3 {
+  font-size: 0.9375rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.proseCard p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.teamStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 52rem;
+}
+
+.toolGrid {
+  display: grid;
+  gap: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .toolGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.toolCard {
+  padding: 1.25rem;
+}
+
+.toolCard h3 {
+  font-size: 0.9375rem;
+  margin-bottom: 0.5rem;
+}
+
+.toolCard > p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.why {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.why span {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-2);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.whyBlock {
+  max-width: 44rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+}
+
+.whyText {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-top: 0.5rem;
+}
+
+.launchRow {
+  margin-top: 1.75rem;
+}
+
+.repoRow {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 560px) {
+  .repoRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.repoCard {
+  padding: 1rem 1.125rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  transition: border-color var(--dur);
+}
+
+.repoCard:hover {
+  border-color: var(--border-strong);
+}
+
+.repoCard strong {
+  display: block;
+  font-size: 0.9375rem;
+}
+
+.repoCard span {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.note {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.note a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Methodology */
+.steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 48rem;
+}
+
+.stepCard {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.stepNum {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.stepMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.stepMeta h3 {
+  font-size: 1rem;
+}
+
+.stepTool {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.stepCard > div > p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.indexGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .indexGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.indexCard {
+  padding: 1.25rem;
+}
+
+.indexHead {
+  margin-bottom: 0.75rem;
+}
+
+.indexId {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.indexHead h3 {
+  font-size: 0.9375rem;
+  margin-top: 0.25rem;
+}
+
+.indexDl {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.indexDl dt {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.indexDl dd {
+  color: var(--text-secondary);
+}
+
+.indexDl code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.indexDoes,
+.indexUse {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-top: 0.5rem;
+}
+
+.indexUse {
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.indexDoes strong,
+.indexUse strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Study area */
+.zoneGrid {
+  display: grid;
+  gap: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .zoneGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.zoneCard {
+  padding: 1.25rem;
+}
+
+.zoneCard h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.zoneCoords {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.zoneCard > p:last-child {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.rationale {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 40rem;
+  margin-bottom: 1.5rem;
+}
+
+.mapPlaceholder {
+  min-height: 220px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-subtle);
+}
+
+.mapPlaceholder span {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.mapPlaceholder p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  max-width: 28rem;
+}
+
+/* Results */
+.findings {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .findings {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.findingCard {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.findingHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.findingMetric {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.findingHead h3 {
+  font-size: 1rem;
+  margin-top: 0.15rem;
+}
+
+.findingMethod {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-align: right;
+  flex-shrink: 0;
+  max-width: 10rem;
+}
+
+.findingSummary {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.chartPlaceholder {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 64px;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.bar {
+  flex: 1;
+  background: var(--accent);
+  border-radius: 2px 2px 0 0;
+  opacity: 0.75;
+  min-height: 4px;
+}
+
+.builtList {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 40rem;
+}
+
+.builtItem {
+  padding: 1.125rem 1.25rem;
+}
+
+.builtItem strong {
+  display: block;
+  font-size: 0.9375rem;
+  margin-bottom: 0.35rem;
+}
+
+.builtItem p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}

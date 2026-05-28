@@ -1,0 +1,20 @@
+.section {
+  padding: var(--section-padding);
+}
+
+.header {
+  margin-bottom: 2.5rem;
+  max-width: 640px;
+}
+
+.title {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
