@@ -1,0 +1,28 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.mark {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.markBg {
+  fill: var(--accent-muted);
+}
+
+.name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+
+.compact .mark {
+  width: 28px;
+  height: 28px;
+}
