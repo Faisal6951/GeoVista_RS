@@ -294,11 +294,11 @@ The project is optimized for **Vercel** deployment. Simply connect the repositor
 ## 🎓 Academic Info
 
 | Field            | Detail                  |
-| ---------------- | ----------------------- | --- |
+| ---------------- | ----------------------- |
 | **Student Name** | Faisal Adnan            |
 | **Roll Number**  | F22-BSRS&GIS-5019       |
 | **Program**      | BS Remote Sensing & GIS |
-| **Session**      | 2022 – 2026             |     |
+| **Session**      | 2022 – 2026             |
 | **Supervisor**   | Mr. Inam Ul Haq         |
 
 ---
